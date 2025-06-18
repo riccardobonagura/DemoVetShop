@@ -11,8 +11,6 @@ public class DBConnectionManager {
     public static String userName = "root";
     public static String password = "admin";
 
-    private static Connection conn;
-    private static PreparedStatement statement;
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
 
@@ -27,8 +25,9 @@ public class DBConnectionManager {
         return conn;
     }
 
-    public static void closeConnection() throws ClassNotFoundException, SQLException {
-        conn.close();
+    public static void closeConnection(Connection c) throws SQLException {
+        // chiudo la conessione
+        c.close();
     }
 
     public static ResultSet selectQuery(String query) throws ClassNotFoundException, SQLException {
