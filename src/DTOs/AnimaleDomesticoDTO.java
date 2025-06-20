@@ -13,6 +13,8 @@ public class AnimaleDomesticoDTO {
     private LocalDate datadinascita;
 
 
+    //la classe DTO AnimaleDomestico non ha funzioni particolari
+
     //getters e setters
 
     public int getChipcode() {

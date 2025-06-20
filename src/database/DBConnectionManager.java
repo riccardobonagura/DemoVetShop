@@ -34,10 +34,10 @@ public class DBConnectionManager {
 
         Connection conn = getConnection();
         //2. creo lo statement
-        Statement statment = conn.createStatement();
+        Statement statement = conn.createStatement();
 
         //eseguo la query che ho fornito come input
-        ResultSet ret = statment.executeQuery(query); //"SELECT * from STUDENTI where .... "
+        ResultSet ret = statement.executeQuery(query); //"SELECT * from STUDENTI where .... "
 
 
         //ci ritorna il result set

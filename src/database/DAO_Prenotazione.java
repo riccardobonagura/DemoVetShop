@@ -12,7 +12,7 @@ public class DAO_Prenotazione {
     private LocalDateTime dataOra;
     private int chipcode;
 
-
+    //inserimento di una nuova prenotazione
     public int scriviPrenotazione()  {
         int ret;
         String InsertQuery =

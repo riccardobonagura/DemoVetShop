@@ -12,7 +12,7 @@ public class DAO_SlotBloccato {
     private LocalDateTime dataOra;
 
 
-    //FUNZIONA E STAMPA ID CORRETTAMENTE
+    //funzione che scrive sul database i nuovi slot bloccati dall'amministratore
     public int scriviSlotBloccati() throws SQLIntegrityConstraintViolationException {
         int ret;
         String InsertQuery = "INSERT INTO `progettoambulatorio`.`blocchi` (`slot`) VALUES ( \'" + this.dataOra + "\')";
@@ -31,7 +31,7 @@ public class DAO_SlotBloccato {
         return ret;
     }
 
-
+    //funzione che recupera dal database tutti gli slot aventi data futura e bloccati
     public ArrayList<DAO_SlotBloccato> caricaSlotBloccati() {
         ArrayList<DAO_SlotBloccato> lista_temp = new ArrayList<>();
         String trovaPrenotazioniOdierne = "SELECT * \n" +

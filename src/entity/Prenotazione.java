@@ -3,7 +3,6 @@ package entity;
 import database.DAO_Prenotazione;
 import java.time.LocalDateTime;
 
-//!! PROBLEMA DOPPIO COSTRUTTORE
 
 public class Prenotazione {
 
@@ -11,7 +10,8 @@ public class Prenotazione {
     private LocalDateTime dataOra;
     private int chipcode;
 
-
+    //funzione che sfrutta la classe DAO per salvare nel database una nuova prenotazione
+    //che arriva dalla GUI
     public int scriviPrenotazione() {
         DAO_Prenotazione linker = new DAO_Prenotazione();
         linker.setDataOra(this.dataOra);
@@ -44,7 +44,7 @@ public class Prenotazione {
         this.idPrenotazione = idPrenotazione;
     }
 
-    //costruttore con argomenti
+    //costruttori con argomenti
     public Prenotazione(int id, LocalDateTime dataOra, int chip) {
         this.idPrenotazione = id;
         this.dataOra = dataOra;

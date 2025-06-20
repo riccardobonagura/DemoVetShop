@@ -13,6 +13,8 @@ public class AnimaleDomestico {
     private String colore;
     private LocalDate datadinascita;
 
+    //la classe entity AnimaleDomestico non ha funzioni particolari
+
     //getters e setters
 
     public int getChipcode() {

@@ -10,7 +10,7 @@ public class DAO_Cliente {
     private String email;
     private String password;
 
-
+    //per le funzionalità sviluppate in questa classe è sufficiente solo la funzione di scrittura
     public int scriviCliente() throws SQLIntegrityConstraintViolationException {
         int ret;
         String InsertQuery = "INSERT INTO CLIENTI(nome,cognome,email,username,password) VALUES ( \'"+this.nome+"\',"+"\'"+ this.cognome +"\',"+"\'"+this.email+"\',"+"\'"+this.username+"\',"+"\'"+this.password+"')";
@@ -48,4 +48,6 @@ public class DAO_Cliente {
     // Getter e Setter per password
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    //è sufficiente il costruttore asenza argomenti
 }

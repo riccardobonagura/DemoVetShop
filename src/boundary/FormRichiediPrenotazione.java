@@ -17,6 +17,7 @@ import java.awt.event.MouseEvent;
 
 public class FormRichiediPrenotazione extends JFrame {
 
+    //classe che si occupa della corretta visualizzazione della GUI
     private static final long serialVersionUID = 1L;
 
     /**
@@ -49,6 +50,7 @@ public class FormRichiediPrenotazione extends JFrame {
 
             {
                 try {
+                    //immagine
                     backgroundImage = ImageIO.read(getClass().getResource("/images/HomeRichiediPrenotazione.png"));
                 } catch (IOException e) {
                     e.printStackTrace();

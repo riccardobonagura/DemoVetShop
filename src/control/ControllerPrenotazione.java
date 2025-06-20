@@ -9,26 +9,29 @@ import java.util.ArrayList;
 
 public class ControllerPrenotazione {
 
+    //funzione che ritorna alla GUI la lista degli animali posseduti dal cliente che interroga il sistema
+    //non avendo implementato una funzione di accesso, il cliente viene identificato tramite la sua mail
+
     public static ArrayList<AnimaleDomesticoDTO> caricaAnimaliDomestici(String email) {
-        //creo ArrayList vuoto
+        //creazione di un ArrayList vuoto
         ArrayList<AnimaleDomesticoDTO> lista_animali = new ArrayList<>();
 
-        //vado a prendere la lista di DTO chiamando il metodo di Entity
+        //recupero della lista tramite il metodo statico della classe cliente: caricaAnimaliDomestici(String)
         lista_animali= Cliente.caricaAnimaliDomestici(email);
 
-        //restituisco la lista alla GUI
+        //passaggio della lista alla GUI
         return lista_animali;
     }
 
+    //funzione che ritorna alla GUI la lista degli slot orari che non è possibile prenotare
     public static ArrayList<LocalDateTime> caricaDateNonDisponibili(){
         //creo ArrayList vuoto
         ArrayList<LocalDateTime> dateNonDisponibili = new ArrayList<>();
 
-        //vado a prendere la lista di DTO chiamando il metodo di Entity
-        //come adattare qui?
+        //recupero della lista che unisce prenotazioni e slot bloccati
         dateNonDisponibili = Agenda.getInstance().caricaDateNonDisponibili();
 
-        //restituisco la lista alla GUI
+        //passaggio della lista alla GUI
         return dateNonDisponibili;
     }
 
@@ -37,6 +40,7 @@ public class ControllerPrenotazione {
 
         Prenotazione p = new Prenotazione(chipcode, dataOra);
 
+        //utilizzando il metodo: UpdateQueryReturnGeneratedKey
         res = p.scriviPrenotazione();
 
         if (res == -1) {

@@ -27,22 +27,7 @@ public class RichiediPrenotazione extends JFrame {
     private LocalDateTime datas;
     private int chipCode;
 
-    /**
-     * Launch the application.
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    RichiediPrenotazione frame = new RichiediPrenotazione();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-     */
     /**
      * Create the frame.
      */
@@ -80,6 +65,7 @@ public class RichiediPrenotazione extends JFrame {
         lblNewLabel_1_1_1.setBounds(37, 215, 128, 19);
         contentPane.add(lblNewLabel_1_1_1);
 
+        //bottone per la scelta dell'animale
         JButton btnAnimale = new JButton("Seleziona Animale");
         btnAnimale.addMouseListener(new MouseAdapter() {
             @Override
@@ -87,11 +73,13 @@ public class RichiediPrenotazione extends JFrame {
                 //mi creo un array su cui vado a chiamare il metodo del controller
                 ArrayList<AnimaleDomesticoDTO> lista_animali = new ArrayList<>();
 
+                //controlli sulla corretta immissione della mail
                 String email = txtEmail.getText();
                 if (!email.contains("@") || email.indexOf("@") == 0 || email.indexOf("@") == email.length() - 1) {
                     JOptionPane.showMessageDialog(RichiediPrenotazione.this, "L'indirizzo email deve contenere una chiocciola '@' e non può iniziare o terminare con essa.");
                 }
 
+                //caricamento della lista degli animali dal database
                 lista_animali = ControllerPrenotazione.caricaAnimaliDomestici(email);
 
                 if(lista_animali.isEmpty()){
@@ -112,12 +100,13 @@ public class RichiediPrenotazione extends JFrame {
         btnAnimale.setBounds(397, 152, 164, 25);
         contentPane.add(btnAnimale);
 
+        //bottone per la scelta dello slot orario
         JButton btnSelezionaData = new JButton("Seleziona Data");
         btnSelezionaData.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
 
-                //mi creo un array su cui vado a chiamare il metodo del controller
+                //creazione di un array su cui chiamare il metodo del controller
                 ArrayList<LocalDateTime> dateNonDisponibili = new ArrayList<>();
                 dateNonDisponibili = ControllerPrenotazione.caricaDateNonDisponibili();
 

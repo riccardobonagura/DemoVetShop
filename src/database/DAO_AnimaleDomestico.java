@@ -15,14 +15,18 @@ public class DAO_AnimaleDomestico {
     private String colore;
     private LocalDate datadinascita;
 
-
+    //funzione che carica dal database la lista di tutti gli animali domestic che appartengono ad un dato Cliente
     public ArrayList<DAO_AnimaleDomestico> caricaAnimaliDomestici(String email)  {
+
         ArrayList<DAO_AnimaleDomestico> lista_temp = new ArrayList<>();
 
         String trovaAnimali = "SELECT animali.* FROM progettoambulatorio.animali JOIN clienti ON Cliente_idCliente = idCliente WHERE email = \'"+email+"\';";
         System.out.println(trovaAnimali);
         try{
+            //stabiliamo la connessione
             ResultSet ret = DBConnectionManager.selectQuery(trovaAnimali);
+
+            //popoliamo l'array list
             while (ret.next()) {
                 DAO_AnimaleDomestico temp = new DAO_AnimaleDomestico();
                 temp.setChipcode(ret.getInt(1));

@@ -16,10 +16,12 @@ public class ControllerRegistraVisita {
         ArrayList<PrenotazioneDTO> lista_prenotazioni = new ArrayList<>();
 
         //vado a prendere la lista di DTO chiamando il metodo di Entity
-        lista_prenotazioni= Agenda.getInstance().caricaPrenotazioni();
+        lista_prenotazioni= Agenda.getInstance().caricaPrenotazioniGiornaliere();
         //restituisco la lista alla GUI
         return lista_prenotazioni;
     }
+    //nota: c'era un errore, chiamava la funzione generica: caricaPrenotazioni.
+    // Modificato e testato con successo.
 
     public static ArrayList<FarmacoDTO> caricaListaFarmaci() {
         //creo ArrayList vuoto

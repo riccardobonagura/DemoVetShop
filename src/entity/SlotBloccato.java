@@ -8,8 +8,7 @@ public class SlotBloccato {
 
     private LocalDateTime dataOra;
 
-//FUNZIONA CORRETTAMENTE E RITORNA IL NUMERO DI ID
-//CHIEDERE ALLA PROF. SE SI PUO TOGLIERE
+//funzione DAO che scrive nel database i nuovi slot appena bloccati
     public int scriviSlotBloccato() throws SQLIntegrityConstraintViolationException {
         DAO_SlotBloccato linker = new DAO_SlotBloccato();
         linker.setDataOra(this.getDataOra());

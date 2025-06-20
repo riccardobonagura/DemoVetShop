@@ -19,7 +19,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class FormSelezionaSlot extends JFrame {
-
+    //classe che si occupa della corretta visualizzazione della GUI
     private static final long serialVersionUID = 1L;
 
     /**
