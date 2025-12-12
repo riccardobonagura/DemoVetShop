@@ -1,4 +1,4 @@
-# VetShopDemo
+# DemoVetShop
 
 This project is a compact Java demo application that models day-to-day workflows of a small veterinary clinic / private vet shop.
 It was actually commissioned to me by a veterinarian living close to me who was looking for a quick prototype for a new site,
